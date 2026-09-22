@@ -1,0 +1,40 @@
+{
+  "name": "toggle-line-numbers",
+  "displayName": "Toggle Line Numbers",
+  "description": "Toggle VS Code line numbers between absolute and relative.",
+  "version": "1.0.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:toggleLineNumbers.toggle"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "toggleLineNumbers.toggle",
+        "title": "Toggle Line Numbers",
+        "category": "Line Numbers",
+        "icon": "$(list-ordered)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "toggleLineNumbers.toggle",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "package": "npx --yes @vscode/vsce package"
+  },
+  "license": "MIT"
+}
